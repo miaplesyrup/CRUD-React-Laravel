@@ -6,13 +6,13 @@ function Student() {
 
     useEffect(() => {
 
-        axios.get(``).then(res => {
-
+        axios.get(`http://127.0.0.1:8000/api/students`).then(res => {
+            console.log(res)
         });
 
     }, [])
   return (
-    <div className="container" mt-5>
+    <div className="container mt-5">
         <div className="row">
             <div className="col-md-12">
                 <div className="card">
