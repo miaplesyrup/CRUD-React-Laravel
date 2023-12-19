@@ -18,6 +18,7 @@ function Student() {
 
     }, [])
 
+    
     const deleteStudent = (e, id) => {
         e.preventDefault();
 
@@ -29,6 +30,7 @@ function Student() {
 
                 alert(res.data.message);
                 thisClicked.closest("tr").remove();
+                // navigate('/students');
             })
             .catch(function(error) {
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Loading from '../components/Loading';
 
@@ -7,6 +7,7 @@ function StudentEdit() {
 
   let { id } = useParams();
 
+  const navigate = useNavigate();
   const [loading, setLoading] =useState(true);
   const [inputErrorList, setInputErrorList] =useState({});
   const [student, setStudent] = useState({});
@@ -53,6 +54,7 @@ function StudentEdit() {
       .then(res => {
 
         alert(res.data.message);
+        navigate('/students');
         setLoading(false);
       })
       .catch(function(error) {
